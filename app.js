@@ -35,3 +35,41 @@ const concatenaArrays = (arr1, arr2) => {
 
 const mesclaObjetos = (obj1, obj2) => ({ ...obj1, ...obj2 });
 
+// Crie uma função que receba como parâmetro uma quantidade indefinida de variáveis inteiras(números inteiros).
+// A função deve retornar a soma de todos os parâmetros(...).
+// Após executada a função, o resultado deve ser exibido no console.
+
+const somaTudo = (...inteiros) => inteiros.reduce((acumulador, elemento) => acumulador + elemento, 0);
+
+// Um palindrome(palíndromo), segundo o dicionário Houaiss,
+// "diz-se de frase ou palavra que se pode ler, indiferentemente,
+// da esquerda para direita ou vice - versa", como por exemplo: osso, Ana, radar.
+// Ou seja, é uma palavra que quando lida de trás pra frente tem o mesmo significado.
+// Implemente uma função em JavaScript que receba uma string como parâmetro
+// e retorne se determinada palavra é um palindromo ou não.
+
+const ehPalindromo = (palavra) => [...palavra].reverse().join('') === palavra;
+
+
+// Faça uma função que receba este objeto por parâmetro, desestruture - 
+// o no começo da função(utilizando destruct) criando três variáveis(nome, idade, profissao).
+// Faça ainda com que a função retorne uma string com a seguinte mensagem:
+// "Esta é Ada, tem 36 anos e é matemática."
+// Concatene as variáveis criadas com destruct para formar a mensagem.
+// Chame a função passando o objeto por parâmetro e exiba o retorno no console.
+// Extra: Faça o destruct acontecer diretamente na linha de declaração dos parâmetros da função.Por fim faça com uma arrow function.
+const pessoa = {
+    nome: 'Ada',
+    idade: 36,
+    profissao: 'matemática'
+};
+
+const desestruturaObjeto = ({ nome, idade, profissao }) => `Esta é ${nome}, tem ${idade} anos e é ${profissao}.`;
+
+// Escreva uma função arrow e armazene -
+// a em uma variável de nome uneDobraRetorna,
+// que aceita um array de números e qualquer outra quantidade de números como parâmetro.
+// A função deve retornar um novo vetor
+// que começa com o vetor inicial concatenado com os outros parâmetros extra dobrados de valor.
+
+const uneDobraRetorna = (arr, ...resto) => [...arr, ...resto.map((elemento) => elemento * 2)];
